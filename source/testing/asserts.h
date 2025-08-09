@@ -1,0 +1,1 @@
+void assert_equal(int first, int second);

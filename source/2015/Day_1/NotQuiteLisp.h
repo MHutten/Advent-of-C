@@ -1,0 +1,1 @@
+int calculate_santas_final_destination(const char * directions);
