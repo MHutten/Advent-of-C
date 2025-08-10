@@ -10,7 +10,7 @@ struct TestOutput {
 };
 
 struct TestSuite {
-    void (*fptr)();
+    struct TestOutput (*fptr)();
 };
 
 void test__calculate_santas_final_destination__good_weather__up_up_down_down() {
@@ -53,14 +53,22 @@ void test__calculate_santas_final_destination__good_weather__down_down_down() {
     assert_equal(calculate_santas_final_destination(")))"), -3);
 }
 
-void test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down() {
-    // printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination(")())())"),-3);
+ struct TestOutput test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination(")())())"),-3)
+    };
+    return output;
 }
 
 int main() {
     struct TestSuite my_suite;
     my_suite.fptr = &test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down;
 
-    my_suite.fptr();
+    struct TestOutput output = my_suite.fptr();
+    if (output.result == true) {
+        printf("%s: PASS\n", output.function_name);
+    } else {
+        printf("%s: FAIL\n", output.function_name);
+    }
 }

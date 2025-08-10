@@ -1,11 +1,12 @@
+#include <stdbool.h>
 #include <stdio.h>
 
-void assert_equal(int first, int second) {
+bool assert_equal(int first, int second) {
 
     if (first == second) {
-        printf("PASS\n");
+        return true;
     } else {
-        printf("FAIL\n");
+        return false;
     }
 
 }

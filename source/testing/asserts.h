@@ -1,1 +1,1 @@
-void assert_equal(int first, int second);
+bool assert_equal(int first, int second);
