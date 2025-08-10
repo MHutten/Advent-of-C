@@ -1,11 +1,10 @@
+#include <stdbool.h>
+
 struct TestOutput {
     const char * function_name;
     const bool result;
 };
 
-struct TestSuite {
-    const struct TestOutput * (*test_functions)();
-};
+typedef struct TestOutput (*test_function)();
 
-struct TestSuite construct_test_suite(struct TestOutput * (*test_functions)());
-
+void run(test_function *test_functions, int length);

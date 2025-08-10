@@ -3,54 +3,70 @@
 
 #include "../../../source/2015/Day_1/NotQuiteLisp.h"
 #include "../../../source/testing/asserts.h"
+#include "../../../source/testing/suite.h"
 
-struct TestOutput {
-    const char * function_name;
-    const bool result;
-};
-
-struct TestSuite {
-    struct TestOutput (*fptr)();
-};
-
-void test__calculate_santas_final_destination__good_weather__up_up_down_down() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination("(())"), 0);
+struct TestOutput test__calculate_santas_final_destination__good_weather__up_up_down_down() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination("(())"), 0)
+    };
+    return output;
 }
 
-void test__calculate_santas_final_destination__good_weather__up_down_up_down() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination("()()"), 0);
+struct TestOutput test__calculate_santas_final_destination__good_weather__up_down_up_down() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination("()()"), 0)
+    };
+    return output;
 }
 
-void test__calculate_santas_final_destination__good_weather__up_up_up() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination("((("), 3);
+struct TestOutput test__calculate_santas_final_destination__good_weather__up_up_up() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination("((("), 3)
+    };
+    return output;
 }
 
-void test__calculate_santas_final_destination__good_weather__up_up_down_up_up_down_up() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination("(()(()("), 3);
+struct TestOutput test__calculate_santas_final_destination__good_weather__up_up_down_up_up_down_up() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination("(()(()("), 3)
+    };
+    return output;
 }
 
-void test__calculate_santas_final_destination__good_weather__down_down_up_up_up_up_up() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination("))((((("), 3);
+struct TestOutput test__calculate_santas_final_destination__good_weather__down_down_up_up_up_up_up() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination("))((((("), 3)
+    };
+    return output;
 }
 
-void test__calculate_santas_final_destination__good_weather__up_down_down() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination("())"), -1);
+struct TestOutput test__calculate_santas_final_destination__good_weather__up_down_down() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination("())"), -1)
+    };
+    return output;
 }
 
-void test__caculate_santas_final_destination__good_weather__down_down_up() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination("))("), -1);
+struct TestOutput test__calculate_santas_final_destination__good_weather__down_down_up() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination("))("), -1)
+    };
+    return output;
 }
 
-void test__calculate_santas_final_destination__good_weather__down_down_down() {
-    printf("%s ", __func__);
-    assert_equal(calculate_santas_final_destination(")))"), -3);
+struct TestOutput test__calculate_santas_final_destination__good_weather__down_down_down() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_santas_final_destination(")))"), -3)
+    };
+    return output;        
 }
 
  struct TestOutput test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down() {
@@ -62,13 +78,16 @@ void test__calculate_santas_final_destination__good_weather__down_down_down() {
 }
 
 int main() {
-    struct TestSuite my_suite;
-    my_suite.fptr = &test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down;
-
-    struct TestOutput output = my_suite.fptr();
-    if (output.result == true) {
-        printf("%s: PASS\n", output.function_name);
-    } else {
-        printf("%s: FAIL\n", output.function_name);
-    }
+    test_function test_functions[] = {
+        &test__calculate_santas_final_destination__good_weather__up_up_down_down,
+        &test__calculate_santas_final_destination__good_weather__up_down_up_down,
+        &test__calculate_santas_final_destination__good_weather__up_up_up,
+        &test__calculate_santas_final_destination__good_weather__up_up_down_up_up_down_up,
+        &test__calculate_santas_final_destination__good_weather__down_down_up_up_up_up_up,
+        &test__calculate_santas_final_destination__good_weather__up_down_down,
+        &test__calculate_santas_final_destination__good_weather__down_down_up,
+        &test__calculate_santas_final_destination__good_weather__down_down_down,
+        &test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down
+    };
+    run(test_functions, 9);
 }
