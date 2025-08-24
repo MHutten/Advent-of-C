@@ -14,3 +14,24 @@ bool assert_equal_int(int first, int second) {
     }
 
 }
+
+bool assert_equal_string(char * first, char * second) {
+
+    int index = 0;
+
+    while (true) {
+        
+        if (first[index] != second[index]) {
+            return false;
+        }
+
+        if (first[index] == '\0') {
+            break;
+        }
+
+        index++;
+    }
+
+    return true;
+
+}
