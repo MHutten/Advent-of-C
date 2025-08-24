@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "../../../include/2015/Day_1/NotQuiteLisp.h"
+#include "../../../include/2015/Day_1/Not_Quite_Lisp.h"
 #include "../../../include/testing/asserts.h"
 #include "../../../include/testing/suite.h"
 
