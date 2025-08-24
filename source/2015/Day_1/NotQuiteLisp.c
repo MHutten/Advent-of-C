@@ -21,7 +21,3 @@ int calculate_santas_final_destination(const char * directions) {
     }
 
 }
-
-// int main() {
-//     printf("%d\n", calculate_santas_final_destination("((("));
-// }
