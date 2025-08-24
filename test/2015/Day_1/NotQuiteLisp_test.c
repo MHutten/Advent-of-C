@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "../../../source/2015/Day_1/NotQuiteLisp.h"
-#include "../../../source/testing/asserts.h"
-#include "../../../source/testing/suite.h"
+#include "../../../include/2015/Day_1/NotQuiteLisp.h"
+#include "../../../include/testing/asserts.h"
+#include "../../../include/testing/suite.h"
 
 struct TestOutput test__calculate_santas_final_destination__good_weather__up_up_down_down() {
     struct TestOutput output = {
