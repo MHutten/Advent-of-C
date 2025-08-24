@@ -69,10 +69,26 @@ struct TestOutput test__calculate_santas_final_destination__good_weather__down_d
     return output;        
 }
 
- struct TestOutput test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down() {
+struct TestOutput test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down() {
     struct TestOutput output = {
         __func__,
         assert_equal(calculate_santas_final_destination(")())())"),-3)
+    };
+    return output;
+}
+
+struct TestOutput test__calculate_basement_entering_instruction_position__good_weather__down() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_basement_entering_instruction_position(")"), 1)
+    };
+    return output;
+}
+
+struct TestOutput test__calculate_basement_entering_instruction_position__good_weather__up_down_up_down_down() {
+    struct TestOutput output = {
+        __func__,
+        assert_equal(calculate_basement_entering_instruction_position("()())"), 5)
     };
     return output;
 }
@@ -87,7 +103,9 @@ int main() {
         &test__calculate_santas_final_destination__good_weather__up_down_down,
         &test__calculate_santas_final_destination__good_weather__down_down_up,
         &test__calculate_santas_final_destination__good_weather__down_down_down,
-        &test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down
+        &test__calculate_santas_final_destination__good_weather__down_up_down_down_up_down_down,
+        &test__calculate_basement_entering_instruction_position__good_weather__down,
+        &test__calculate_basement_entering_instruction_position__good_weather__up_down_up_down_down
     };
-    run(test_functions, 9);
+    run(test_functions, 11);
 }
