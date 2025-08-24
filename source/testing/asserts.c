@@ -1,7 +1,11 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-bool assert_equal(int first, int second) {
+bool fail() {
+    return false;
+}
+
+bool assert_equal_int(int first, int second) {
 
     if (first == second) {
         return true;
