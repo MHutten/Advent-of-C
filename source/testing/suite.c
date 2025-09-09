@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "suite.h"
+#include "../../include/testing/suite.h"
 
 void run(test_function *test_functions, int length) {
     
