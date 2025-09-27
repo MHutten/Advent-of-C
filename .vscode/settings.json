@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "asserts.h": "c",
-        "stdbool.h": "c",
-        "notquitelisp.h": "c"
-    }
-}
