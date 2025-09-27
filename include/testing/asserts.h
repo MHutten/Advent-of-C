@@ -18,3 +18,7 @@ bool assert_equal_string(char * first, char * second);
     ),                                      \
     default: fail()                         \
 )
+
+bool assert_is_true(bool condition);
+
+bool assert_is_false(bool condition);

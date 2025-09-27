@@ -35,3 +35,11 @@ bool assert_equal_string(char * first, char * second) {
     return true;
 
 }
+
+bool assert_is_true(bool condition) {
+    return condition;
+}
+
+bool assert_is_false(bool condition) {
+    return !condition;
+}
