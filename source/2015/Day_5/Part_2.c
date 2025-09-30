@@ -8,13 +8,15 @@
 
 int main (int argc, char *argv[]) {
 
-    char * file_content = read(argv[1]);
+    char ** lines = read_lines(argv[1]);
     int number_of_nice_strings = 0;
-    char * string = strtok(file_content, "\n");
+    int index = 0;
 
-    while (string != NULL) {
-        number_of_nice_strings += is_nice_now(string);
-        string = strtok(NULL, "\n");
+    while (lines[index] != NULL) {
+
+        number_of_nice_strings += is_nice_now(lines[index]);
+        index++;
+
     }
 
     printf("%d\n", number_of_nice_strings);

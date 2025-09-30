@@ -7,17 +7,23 @@
 
 int main (int argc, char *argv[]) {
 
-    char * file_content = read(argv[1]);
+    char ** lines = read_lines(argv[1]);
     int area_of_wrapping_paper = 0;
-    char * length = strtok(file_content, "x");
-    char * width = strtok(NULL, "x");
-    char * height = strtok(NULL, "\n");
+    int index = 0;
+    char * length;
+    char * width;
+    char * height;
 
-    while (length != NULL) {
-        area_of_wrapping_paper += calculate_area_of_wrapping_paper(atoi(length), atoi(width), atoi(height));
-        length = strtok(NULL, "x");
+    while (lines[index] != NULL) {
+
+        length = strtok(lines[index], "x");
         width = strtok(NULL, "x");
-        height = strtok(NULL, "\n");
+        height = strtok(NULL, "x");
+
+        area_of_wrapping_paper += calculate_area_of_wrapping_paper(atoi(length), atoi(width), atoi(height));
+
+        index++;
+
     }
 
     printf("%d\n", area_of_wrapping_paper);
