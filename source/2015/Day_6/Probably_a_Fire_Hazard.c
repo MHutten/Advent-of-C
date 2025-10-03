@@ -57,7 +57,7 @@ struct OperationData parse_operation_string(const string[]) {
 
 int turn_on(int start[2], int end[2], bool * lights[]) {
 
-    int increase_in_brightness = 0;
+    int number_of_lit_lights = 0;
 
     for (int i = start[0]; i <= end[0]; i++) {
 
@@ -65,22 +65,22 @@ int turn_on(int start[2], int end[2], bool * lights[]) {
 
             if (lights[i][j] == false) {
                 lights[i][j] = true;
-                increase_in_brightness++;
+                number_of_lit_lights++;
             }
 
         }
 
     }
 
-    return increase_in_brightness;
+    return number_of_lit_lights;
 
 }
 
 int * toggle(int start[2], int end[2], bool * lights[]) {
 
-    int * increase_and_decrease_in_brightness = (int *) malloc(2 * sizeof(int));
-    increase_and_decrease_in_brightness[0] = 0;
-    increase_and_decrease_in_brightness[1] = 0;
+    int * number_of_lit_and_extinguished_lights = (int *) malloc(2 * sizeof(int));
+    number_of_lit_and_extinguished_lights[0] = 0;
+    number_of_lit_and_extinguished_lights[1] = 0;
 
     for (int i = start[0]; i <= end[0]; i++) {
 
@@ -88,17 +88,17 @@ int * toggle(int start[2], int end[2], bool * lights[]) {
 
             if (lights[i][j] == false) {
                 lights[i][j] = true;
-                increase_and_decrease_in_brightness[0]++;
+                number_of_lit_and_extinguished_lights[0]++;
             } else {
                 lights[i][j] = false;
-                increase_and_decrease_in_brightness[1]++;
+                number_of_lit_and_extinguished_lights[1]++;
             }
 
         }
 
     }
 
-    return increase_and_decrease_in_brightness;
+    return number_of_lit_and_extinguished_lights;
 
 }
 
