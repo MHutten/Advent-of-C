@@ -55,16 +55,57 @@ struct OperationData parse_operation_string(const string[]) {
 
 }
 
-int turn_on(int start[2], int end[2], bool * lights[]) {
-
-    int number_of_lit_lights = 0;
+void turn_on(int start[2], int end[2], bool * lights[]) {
 
     for (int i = start[0]; i <= end[0]; i++) {
 
         for (int j = start[1]; j <= end[1]; j++) {
 
-            if (lights[i][j] == false) {
-                lights[i][j] = true;
+            lights[i][j] = true;
+
+        }
+
+    }
+
+}
+
+void toggle(int start[2], int end[2], bool * lights[]) {
+
+    for (int i = start[0]; i <= end[0]; i++) {
+
+        for (int j = start[1]; j <= end[1]; j++) {
+
+            lights[i][j] = !lights[i][j];
+
+        }
+
+    }
+
+}
+
+void turn_off(int start[2], int end[2], bool * lights[]) {
+
+    for (int i = start[0]; i <= end[0]; i++) {
+
+        for (int j = start[1]; j <= end[1]; j++) {
+
+            lights[i][j] = false;
+
+        }
+
+    }
+
+}
+
+int get_number_of_lit_lights(bool * lights[]) {
+
+    int number_of_lit_lights = 0;
+
+    for (int i = 0; i < 1000; i++) {
+
+        for (int j = 0; j < 1000; j++) {
+
+            if (lights[i][j] == true) {
                 number_of_lit_lights++;
             }
 
@@ -73,53 +114,6 @@ int turn_on(int start[2], int end[2], bool * lights[]) {
     }
 
     return number_of_lit_lights;
-
-}
-
-int * toggle(int start[2], int end[2], bool * lights[]) {
-
-    int * number_of_lit_and_extinguished_lights = (int *) malloc(2 * sizeof(int));
-    number_of_lit_and_extinguished_lights[0] = 0;
-    number_of_lit_and_extinguished_lights[1] = 0;
-
-    for (int i = start[0]; i <= end[0]; i++) {
-
-        for (int j = start[1]; j <= end[1]; j++) {
-
-            if (lights[i][j] == false) {
-                lights[i][j] = true;
-                number_of_lit_and_extinguished_lights[0]++;
-            } else {
-                lights[i][j] = false;
-                number_of_lit_and_extinguished_lights[1]++;
-            }
-
-        }
-
-    }
-
-    return number_of_lit_and_extinguished_lights;
-
-}
-
-int turn_off(int start[2], int end[2], bool * lights[]) {
-
-    int number_of_extinguished_lights = 0;
-
-    for (int i = start[0]; i <= end[0]; i++) {
-
-        for (int j = start[1]; j <= end[1]; j++) {
-
-            if (lights[i][j] == true) {
-                lights[i][j] = false;
-                number_of_extinguished_lights++;
-            }
-
-        }
-
-    }
-
-    return number_of_extinguished_lights;
 
 }
 
@@ -199,5 +193,23 @@ int turn_off_ancient_nordic_elvish(int start[2], int end[2], int * lights[]) {
     }
 
     return decrease_in_brightness;
+
+}
+
+int calculate_total_brightness(int * lights[]) {
+
+    int brightness = 0;
+
+    for (int i = 0; i < 1000; i++) {
+
+        for (int j = 0; j < 1000; j++) {
+
+            brightness += lights[i][j];
+
+        }
+
+    }
+
+    return brightness;
 
 }
