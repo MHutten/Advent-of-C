@@ -1,0 +1,1 @@
+int calculate_difference_between_code_and_memory_characters(char *string);
