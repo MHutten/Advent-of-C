@@ -10,7 +10,6 @@ int main (int argc, char *argv[]) {
 
     char ** lines = read_lines(argv[1]);
     int ** lights = initialize_lights_with_brightness_controls(0);
-    int brightness = 0;
     int line_index = 0;
 
     while (lines[line_index] != NULL) {
@@ -19,15 +18,15 @@ int main (int argc, char *argv[]) {
 
         if (strcmp(operation_data.operation, "on") == 0) {
 
-            brightness += turn_on_ancient_nordic_elvish(operation_data.start, operation_data.end, lights);
+            turn_on_ancient_nordic_elvish(operation_data.start, operation_data.end, lights);
 
         } else if (strcmp(operation_data.operation, "toggle") == 0) {
 
-            brightness += toggle_ancient_nordic_elvish(operation_data.start, operation_data.end, lights);
+            toggle_ancient_nordic_elvish(operation_data.start, operation_data.end, lights);
 
         } else {
 
-            brightness -= turn_off_ancient_nordic_elvish(operation_data.start, operation_data.end, lights);
+            turn_off_ancient_nordic_elvish(operation_data.start, operation_data.end, lights);
 
         }
 
@@ -35,7 +34,7 @@ int main (int argc, char *argv[]) {
 
     }
 
-    printf("%d\n", brightness);
+    printf("%d\n", calculate_total_brightness(lights));
 
     return 0;
 }

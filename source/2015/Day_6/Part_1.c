@@ -10,7 +10,6 @@ int main (int argc, char *argv[]) {
 
     char ** lines = read_lines(argv[1]);
     bool ** lights = initialize_lights(false);
-    int number_of_lit_lights = 0;
     int line_index = 0;
 
     while (lines[line_index] != NULL) {
@@ -19,17 +18,15 @@ int main (int argc, char *argv[]) {
 
         if (strcmp(operation_data.operation, "on") == 0) {
 
-            number_of_lit_lights += turn_on(operation_data.start, operation_data.end, lights);
+            turn_on(operation_data.start, operation_data.end, lights);
 
         } else if (strcmp(operation_data.operation, "toggle") == 0) {
 
-            int * number_of_lit_and_extinguished_lights = toggle(operation_data.start, operation_data.end, lights);
-            number_of_lit_lights += number_of_lit_and_extinguished_lights[0];
-            number_of_lit_lights -= number_of_lit_and_extinguished_lights[1];
+            toggle(operation_data.start, operation_data.end, lights);
 
         } else {
 
-            number_of_lit_lights -= turn_off(operation_data.start, operation_data.end, lights);
+            turn_off(operation_data.start, operation_data.end, lights);
 
         }
 
@@ -37,7 +34,7 @@ int main (int argc, char *argv[]) {
 
     }
 
-    printf("%d\n", number_of_lit_lights);
+    printf("%d\n", get_number_of_lit_lights(lights));
 
     return 0;
 }

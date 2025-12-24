@@ -13,9 +13,9 @@ struct TestOutput test__turn_on__good_weather__0_0_trough_999_999() {
     int start[] = {0, 0};
     int end[] = {999, 999};
 
-    int result = turn_on(start, end, lights);
+    turn_on(start, end, lights);
 
-    bool output_bool = assert_equal(result, 1000000);
+    bool output_bool = assert_equal(get_number_of_lit_lights(lights), 1000000);
 
     for (int i = 0; i < 1000; i++) {
 
@@ -51,10 +51,9 @@ struct TestOutput test__toggle__good_weather__0_0_trough_999_0() {
     int start[] = {0, 0};
     int end[] = {999, 0};
 
-    int * result = toggle(start, end, lights);
+    toggle(start, end, lights);
 
-    bool output_bool = assert_equal(result[0], 500);
-    output_bool = output_bool && assert_equal(result[1], 500);
+    bool output_bool = assert_equal(get_number_of_lit_lights(lights), 500);
 
     for (int index = 0; index < 1000; index++) {
 
@@ -86,9 +85,9 @@ struct TestOutput test__turn_off__good_weather__499_499_trough_500_500() {
     int start[] = {499, 499};
     int end[] = {500, 500};
 
-    int result = turn_off(start, end, lights);
+    turn_off(start, end, lights);
 
-    bool output_bool = assert_equal(result, 4);
+    bool output_bool = assert_equal(get_number_of_lit_lights(lights), 999996);
 
     for (int i = 0; i < 1000; i++) {
 
@@ -122,9 +121,9 @@ struct TestOutput test__turn_on_ancient_nordic_elvish__good_weather__0_0_trough_
     int start[] = {0, 0};
     int end[] = {0, 0};
 
-    int result = turn_on_ancient_nordic_elvish(start, end, lights);
+    turn_on_ancient_nordic_elvish(start, end, lights);
 
-    bool output_bool = assert_equal(result, 1);
+    bool output_bool = assert_equal(calculate_total_brightness(lights), 1);
 
     output_bool = output_bool && assert_equal(lights[0][0], 1);
 
@@ -152,9 +151,9 @@ struct TestOutput test__toggle_ancient_nordic_elvish__good_weather__0_0_trough_9
     int start[] = {0, 0};
     int end[] = {999, 999};
 
-    int result = toggle_ancient_nordic_elvish(start, end, lights);
+    toggle_ancient_nordic_elvish(start, end, lights);
 
-    bool output_bool = assert_equal(result, 2000000);
+    bool output_bool = assert_equal(calculate_total_brightness(lights), 2000000);
 
     for (int i = 0; i < 1000; i++) {
 
