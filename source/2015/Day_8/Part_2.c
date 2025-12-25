@@ -14,7 +14,7 @@ int main (int argc, char *argv[]) {
 
     while (lines[index] != NULL) {
 
-        difference += calculate_difference_between_encoded_and_code_characters(lines[index]);
+        difference += calculate_encoded_length(lines[index]) - strlen(lines[index]);
         index++;
 
     }

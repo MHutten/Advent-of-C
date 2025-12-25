@@ -1,3 +1,3 @@
-int calculate_difference_between_code_and_memory_characters(char *string);
+int calculate_memory_length(char *string);
 
-int calculate_difference_between_encoded_and_code_characters(char *string);
+int calculate_encoded_length(char *string);

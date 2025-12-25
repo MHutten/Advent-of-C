@@ -14,7 +14,7 @@ int main (int argc, char *argv[]) {
 
     while (lines[index] != NULL) {
 
-        difference += calculate_difference_between_code_and_memory_characters(lines[index]);
+        difference += strlen(lines[index]) - calculate_memory_length(lines[index]);
         index++;
 
     }
