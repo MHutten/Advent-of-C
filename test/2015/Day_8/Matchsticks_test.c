@@ -5,7 +5,7 @@
 #include "../../../include/testing/asserts.h"
 #include "../../../include/testing/suite.h"
 
-struct TestOutput test__calculate_memory_length__good_weather__quote_backslash_quote() {
+struct TestOutput test__calculate_memory_length__good_weather__quote_quote() {
     struct TestOutput output = {
         __func__,
         assert_equal(calculate_memory_length("\"\""), 0)
@@ -37,7 +37,7 @@ struct TestOutput test__calculate_memory_length__good_weather__quote_backslash_x
     return output;
 }
 
-struct TestOutput test__calculate_encoded_length__good_weather__quote_backslash_quote() {
+struct TestOutput test__calculate_encoded_length__good_weather__quote_quote() {
     struct TestOutput output = {
         __func__,
         assert_equal(calculate_encoded_length("\"\""), 6)
@@ -71,11 +71,11 @@ struct TestOutput test__calculate_encoded_length__good_weather__quote_backslash_
 
 int main() {
     test_function test_functions[] = {
-        &test__calculate_memory_length__good_weather__quote_backslash_quote,
+        &test__calculate_memory_length__good_weather__quote_quote,
         &test__calculate_memory_length__good_weather__quote_abc_quote,
         &test__calculate_memory_length__good_weather__quote_aaa_backslash_quote_aaa_quote,
         &test__calculate_memory_length__good_weather__quote_backslash_x27_quote,
-        &test__calculate_encoded_length__good_weather__quote_backslash_quote,
+        &test__calculate_encoded_length__good_weather__quote_quote,
         &test__calculate_encoded_length__good_weather__quote_abc_quote,
         &test__calculate_encoded_length__good_weather__quote_aaa_backslash_quote_aaa_quote,
         &test__calculate_encoded_length__good_weather__quote_backslash_x27_quote
