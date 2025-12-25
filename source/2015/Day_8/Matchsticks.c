@@ -31,3 +31,23 @@ int calculate_difference_between_code_and_memory_characters(char *string) {
     return difference;
 
 }
+
+int calculate_difference_between_encoded_and_code_characters(char *string) {
+
+    int difference = 4;
+
+    size_t index = 1;
+
+    while (string[index + 1] != '\0') {
+
+        if (string[index] == '\"' || string[index] == '\\') {
+            difference ++;
+        }
+
+        index++;
+
+    }
+
+    return difference;
+
+}
