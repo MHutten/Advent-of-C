@@ -1,0 +1,1 @@
+char *look_and_say(char *string);
