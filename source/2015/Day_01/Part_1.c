@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "../../../include/2015/Day_01/Not_Quite_Lisp.h"
+#include "../../../include/file.h"
+
+int main (int argc, char *argv[]) {
+
+    printf("%d\n", calculate_santas_final_destination(read(argv[1])));
+
+    return 0;
+}
