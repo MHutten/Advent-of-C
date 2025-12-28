@@ -125,13 +125,15 @@ struct TestOutput test__turn_on_ancient_nordic_elvish__good_weather__0_0_trough_
 
     bool output_bool = assert_equal(calculate_total_brightness(lights), 1);
 
-    output_bool = output_bool && assert_equal(lights[0][0], 1);
+    for (int i = 0; i < 1000; i++) {
 
-    for (int i = 1; i < 1000; i++) {
+        for (int j = 0; j < 1000; j++) {
 
-        for (int j = 1; j < 1000; j++) {
-
-            output_bool = output_bool && assert_equal(lights[i][j], 0);
+            if (i == 0 && j == 0) {
+                output_bool = output_bool && assert_equal(lights[i][j], 1);
+            } else {
+                output_bool = output_bool && assert_equal(lights[i][j], 0);
+            }
 
         }
 
