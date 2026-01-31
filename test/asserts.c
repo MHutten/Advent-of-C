@@ -1,39 +1,17 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 bool fail() {
     return false;
 }
 
 bool assert_equal_int(int first, int second) {
-
-    if (first == second) {
-        return true;
-    } else {
-        return false;
-    }
-
+    return first == second;
 }
 
 bool assert_equal_string(char * first, char * second) {
-
-    int index = 0;
-
-    while (true) {
-        
-        if (first[index] != second[index]) {
-            return false;
-        }
-
-        if (first[index] == '\0') {
-            break;
-        }
-
-        index++;
-    }
-
-    return true;
-
+    return strcmp(first, second) == 0;
 }
 
 bool assert_is_true(bool condition) {
