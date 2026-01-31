@@ -1,4 +1,4 @@
-#include "../../../include/math.h"
+#include "../../math.h"
 
 int calculate_area_of_wrapping_paper(int length, int width, int height) {
     int  length_x_width = length * width;

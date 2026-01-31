@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../../include/2015/Day_01/Not_Quite_Lisp.h"
-#include "../../../include/file.h"
+#include "Not_Quite_Lisp.h"
+#include "../../file.h"
 
 int main (int argc, char *argv[]) {
 

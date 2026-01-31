@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../../include/2015/Day_08/Matchsticks.h"
-#include "../../../include/file.h"
+#include "Matchsticks.h"
+#include "../../file.h"
 
 int main (int argc, char *argv[]) {
 

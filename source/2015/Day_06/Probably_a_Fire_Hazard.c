@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../../include/2015/Day_06/Probably_a_Fire_Hazard.h"
+#include "Probably_a_Fire_Hazard.h"
 
 bool ** initialize_lights(bool initial_state) {
 

@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../../include/2015/Day_02/I_Was_Told_There_Would_Be_No_Math.h"
-#include "../../../include/file.h"
+#include "I_Was_Told_There_Would_Be_No_Math.h"
+#include "../../file.h"
 
 int main (int argc, char *argv[]) {
 

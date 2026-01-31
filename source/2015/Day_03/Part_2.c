@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../../include/2015/Day_03/Perfectly_Spherical_Houses_in_a_Vacuum.h"
-#include "../../../include/file.h"
+#include "Perfectly_Spherical_Houses_in_a_Vacuum.h"
+#include "../../file.h"
 
 int main (int argc, char *argv[]) {
 

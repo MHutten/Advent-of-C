@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "../../../include/2015/Day_03/Perfectly_Spherical_Houses_in_a_Vacuum.h"
+#include "Perfectly_Spherical_Houses_in_a_Vacuum.h"
 
 int count_visited_houses(Node * visited_houses) {
     int count = 0;

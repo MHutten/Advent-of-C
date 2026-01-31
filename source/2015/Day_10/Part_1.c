@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "../../../include/2015/Day_10/Elves_Look_Elves_Say.h"
+#include "Elves_Look_Elves_Say.h"
 
 int main(int argc, char *argv[]) {
 

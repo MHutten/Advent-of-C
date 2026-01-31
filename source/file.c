@@ -57,7 +57,7 @@ char * read(char * file_path) {
     return file_content_buffer;
 }
 
-char ** read_lines(char file_path[]) {
+char **read_delimiter_separated_substrings(char *file_path, char delimiter) {
 
     FILE *file_pointer = fopen(file_path, "r");
 
@@ -86,7 +86,7 @@ char ** read_lines(char file_path[]) {
 
         __assert_memory_is_allocated(line_buffer);
 
-        while (character != '\n' && character != EOF) {
+        while (character != delimiter && character != EOF) {
 
             if (character_index >= line_size - 1) {
 
@@ -114,7 +114,7 @@ char ** read_lines(char file_path[]) {
 
         file_content_buffer[line_index++] = line_buffer;
 
-        if (character == '\n') {
+        if (character == delimiter) {
             character = fgetc(file_pointer);
         }
     }
@@ -128,5 +128,11 @@ char ** read_lines(char file_path[]) {
     file_content_buffer[line_index++] = NULL;
 
     return file_content_buffer;
+    
+}
+
+char **read_lines(char *file_path) {
+
+    return read_delimiter_separated_substrings(file_path, '\n');
 
 }

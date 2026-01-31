@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../../include/2015/Day_06/Probably_a_Fire_Hazard.h"
-#include "../../../include/file.h"
+#include "Probably_a_Fire_Hazard.h"
+#include "../../file.h"
 
 int main (int argc, char *argv[]) {
 
